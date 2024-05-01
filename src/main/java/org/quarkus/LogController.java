@@ -19,7 +19,7 @@ public class LogController {
     @GET
     @Path("/data")
     public List<Log> getLogs(@QueryParam("N") int N) {
-        return logServiceMongo.getLogs(N);
+        return logServiceMongo.getData(N);
     }
 
 

@@ -1,9 +1,7 @@
 package org.quarkus.model;
 
-import org.bson.types.ObjectId;
 
 public class Log  {
-    public ObjectId id;
     public String ruc;
     public String businessName;
     public String request;

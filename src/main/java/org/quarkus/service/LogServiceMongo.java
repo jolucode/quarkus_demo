@@ -1,23 +1,21 @@
 package org.quarkus.service;
 
-import io.quarkus.mongodb.panache.PanacheMongoRepository;
 import jakarta.enterprise.context.ApplicationScoped;
-import org.bson.types.ObjectId;
 import org.quarkus.model.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @ApplicationScoped
-public class LogServiceMongo implements PanacheMongoRepository<Log> {
+public class LogServiceMongo implements LogService {
 
-  public List<Log> getLogs(int N) {
+  @Override
+  public List<Log> getData(int N) {
     List<Log> logs = new ArrayList<>();
     for (int i = 0; i < N; i++) {
       for (int j = 0; j < N; j++) {
         for (int k = 0; k < N; k++) {
           Log log = new Log();
-          log.id = new ObjectId();
           log.ruc = "ruc" + i + j + k;
           log.businessName = "businessName" + i + j + k;
           log.request = "request" + i + j + k;
